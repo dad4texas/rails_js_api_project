@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <h1>My Favorite Recipe Videos</h1>
+
+      <form action="http://localhost:3000/movies/" method="post">
+        <h3>Create a movie!</h3>
+        <label>Title</label>
+        <input type="text" name="movie[title]" id="movie[title]" placeholder="required to save movie"></br>
+
+        <label>Director</label>
+        <select name="movie[director_id]">
+        </select></br>
+        
+        <label>Description</label>
+        <textarea name="movie[description]" id="movie[description]"></textarea></br>
+
+        <label>Image</label>
+        <input type="text" name="movie[image]" id="movie[image]"  placeholder="Write down the URL"></br>
+
+        <label>Rotten Tomato Score</label>
+        <input type="text" name="movie[rt_score]" id="movie[rt_score]"></br>
+
+        <label>Release year</label>
+        <input type="text" name="movie[release_year]" id="movie[release_year]"></br>
+
+  
+        <label class="character-name">Character name</label>
+        <input class="character-names" type="text" name="movie[characters_attributes][0][name]" id="movie[characters_attributes][0][name]" placeholder="A character can't be saved without a name"></br>
+          
+     
+        <label>Character image</label>
+        <input class = "character-images" type="text" name="movie[characters_attributes][0][image]" id="movie[characters_attributes][0][image]" placeholder="Write down the URL"></br>
+
+        <label>Character introduction</label>
+        <textarea name="movie[characters_attributes][0][introduction]" id="movie[characters_attributes][0][introduction]"></textarea></br>
+
+        <br></br>
+        <input id="add-characters" type="button" value="Add more characters" onclick="addMoreCharacter()"><br> 
+        <input class="submit" type="submit" value="submit">
+      </form>
+
+      <div id="ghibli-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5jIlsz5cYsE" frameborder="0" allow="accelerometer;
+         autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div id="card-area">    
+      </div>
+
+      <div id="create-movie">
+        <img src="./src/images/newVDO.jpg">
+         <p>Add a Recipe!</p>
+      </div>>
+
+    <button id="sort-button">Sort by the title!</button>>
+
+      
+      <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
+      <script type="application/javascript" src="src/movie.js" charset="UTF-8"></script>
+      <script type="application/javascript" src="src/director.js" charset="UTF-8"></script>
+      <script type="application/javascript" src="src/character.js" charset="UTF-8"></script>
+      <script type="application/javascript" src="src/practical.js" charset="UTF-8"></script>
+      <link rel="stylesheet" href="./style.css">      
+  </body>
+</html>
