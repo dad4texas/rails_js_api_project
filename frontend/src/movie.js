@@ -25,7 +25,7 @@ class Movie{
       if(this.image){
         img.setAttribute("src", this.image)
       }else{
-        img.setAttribute("src", "./src/images/unknown.jpg")
+        img.setAttribute("src", "./src/images/noImage.jpg")
       }
       divForImg.append(img)
     
@@ -58,7 +58,7 @@ class Movie{
      addDeleteButton(infoCollect){
       let movie = this
       let button = document.createElement("button")
-      button.innerText = "Delete this movie"
+      button.innerText = "Delete this video"
       button.setAttribute("class", "delete-movie")
       button.onclick = Movie.deleteMovie.bind(movie)
       infoCollect.append(button)

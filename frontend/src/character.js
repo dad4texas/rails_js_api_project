@@ -11,7 +11,7 @@ class Character{
       divForCharacters.innerHTML = "<strong> Characters: </strong>"
   
       let pForNames = document.createElement("p")
-      pForNames.style.textDecoration = "underline dotted"
+      //pForNames.style.textDecoration = "underline dotted"
       
   
   

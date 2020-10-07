@@ -22,7 +22,7 @@ class Director{
       let divForDirector = document.createElement('div')
       divForDirector.setAttribute('class',"target-block")
       divForDirector.innerHTML = `<strong>Director</strong>:  ${this.name}<br>`
-      divForDirector.style.textDecoration = "underline dotted"
+      //divForDirector.style.textDecoration = "underline dotted"
      
       let divForTooltip = document.createElement('div')
       divForTooltip.setAttribute('class',"tooltip")

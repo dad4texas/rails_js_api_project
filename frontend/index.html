@@ -8,11 +8,11 @@
       <h1>My Favorite Recipe Videos</h1>
 
       <form action="http://localhost:3000/movies/" method="post">
-        <h3>Create a movie!</h3>
+        <h3>Add a Recipe Video!</h3>
         <label>Title</label>
         <input type="text" name="movie[title]" id="movie[title]" placeholder="required to save movie"></br>
 
-        <label>Director</label>
+        <label>Chef's Name</label>
         <select name="movie[director_id]">
         </select></br>
         
@@ -44,7 +44,7 @@
         <input class="submit" type="submit" value="submit">
       </form>
 
-      <div id="ghibli-video">
+      <div id="waffle-video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/5jIlsz5cYsE" frameborder="0" allow="accelerometer;
          autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
@@ -65,6 +65,7 @@
       <script type="application/javascript" src="src/director.js" charset="UTF-8"></script>
       <script type="application/javascript" src="src/character.js" charset="UTF-8"></script>
       <script type="application/javascript" src="src/practical.js" charset="UTF-8"></script>
-      <link rel="stylesheet" href="./style.css">      
+      <link rel="stylesheet" href="./style.css"> 
+ 
   </body>
 </html>

@@ -1,4 +1,4 @@
-h1, #ghibli-video {
+h1, #waffle-video {
   text-align: center;
 }
 
@@ -144,11 +144,11 @@ select textarea{
 
 
 .delete-movie{
-    background-color: forestgreen;
+    background-color:#f44336;
     padding: 2%;
     border: 1px solid black;
     margin: 1%;
-    border-radius: 10%;
+    border-radius: 1%;
     color: whitesmoke;
 }
 
