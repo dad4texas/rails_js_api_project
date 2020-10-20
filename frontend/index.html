@@ -7,37 +7,37 @@
   <body>
       <h1>My Favorite Recipes</h1>
 
-      <form action="http://localhost:3000/movies/" method="post">
+      <form action="http://localhost:3000/recipes/" method="post">
         <h3>Add a Recipe!</h3>
         <label>Recipe Title</label>
-        <input type="text" name="movie[title]" id="movie[title]" placeholder="required to save movie"></br>
+        <input type="text" name="recipe[title]" id="recipe[title]" placeholder="required to save recipe"></br>
 
         <label>Chef's Name</label>
-        <select name="movie[director_id]">
+        <select name="recipe[director_id]">
         </select></br>
         
         <label>Ingredients</label>
-        <textarea name="movie[description]" id="movie[description]"></textarea></br>
+        <textarea name="recipe[description]" id="recipe[description]"></textarea></br>
 
         <label>Image</label>
-        <input type="text" name="movie[image]" id="movie[image]"  placeholder="Write down the URL"></br>
+        <input type="text" name="recipe[image]" id="recipe[image]"  placeholder="Write down the URL"></br>
 
         <label>Score 1-10 Ten Being the Most Favorite</label>
-        <input type="text" name="movie[rt_score]" id="movie[rt_score]"></br>
+        <input type="text" name="recipe[rt_score]" id="recipe[rt_score]"></br>
 
         <label>Date Submitted</label>
-        <input type="text" name="movie[release_year]" id="movie[release_year]"></br>
+        <input type="text" name="recipe[release_year]" id="recipe[release_year]"></br>
 
   
         <label class="character-name">Character name</label>
-        <input class="character-names" type="text" name="movie[characters_attributes][0][name]" id="movie[characters_attributes][0][name]" placeholder="A character can't be saved without a name"></br>
+        <input class="character-names" type="text" name="recipe[characters_attributes][0][name]" id="recipe[characters_attributes][0][name]" placeholder="A character can't be saved without a name"></br>
       
      
         <label>Character image</label>
-        <input class = "character-images" type="text" name="movie[characters_attributes][0][image]" id="movie[characters_attributes][0][image]" placeholder="Write down the URL"></br>
+        <input class = "character-images" type="text" name="recipe[characters_attributes][0][image]" id="recipe[characters_attributes][0][image]" placeholder="Write down the URL"></br>
  
         <label>Character introduction</label>
-        <textarea name="movie[characters_attributes][0][introduction]" id="movie[characters_attributes][0][introduction]"></textarea></br>
+        <textarea name="recipe[characters_attributes][0][introduction]" id="recipe[characters_attributes][0][introduction]"></textarea></br>
 
         <br></br>
         <input id="add-characters" type="button" value="Add more characters" onclick="addMoreCharacter()"><br> 
@@ -52,7 +52,7 @@
       <div id="card-area">    
       </div>
 
-      <div id="create-movie">
+      <div id="create-recipe">
         <img src="./src/images/newVDO.jpg">
          <p>Add a Recipe!</p>
       </div>>
@@ -61,7 +61,7 @@
 
       
       <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
-      <script type="application/javascript" src="src/movie.js" charset="UTF-8"></script>
+      <script type="application/javascript" src="src/recipe.js" charset="UTF-8"></script>
       <script type="application/javascript" src="src/director.js" charset="UTF-8"></script>
       <script type="application/javascript" src="src/character.js" charset="UTF-8"></script>
       <script type="application/javascript" src="src/practical.js" charset="UTF-8"></script>

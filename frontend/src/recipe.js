@@ -1,19 +1,19 @@
-class Movie{
-    constructor(movie){
-      this.id = movie.id
-      this.title = movie.title
-      this.description = movie.description
-      this.rt_score = movie.rt_score
-      this.image = movie.image
-      this.release_year = movie.release_year
-      this.director = new Director(movie.director)
-      this.characters = movie.characters.map(c=>new Character(c))
+class recipe{
+    constructor(recipe){
+      this.id = recipe.id
+      this.title = recipe.title
+      this.description = recipe.description
+      this.rt_score = recipe.rt_score
+      this.image = recipe.image
+      this.release_year = recipe.release_year
+      this.director = new Director(recipe.director)
+      this.characters = recipe.characters.map(c=>new Character(c))
     }
   
-     addMovietoPage(){
+     addrecipetoPage(){
       let divCard = document.createElement('div')
       divCard.setAttribute("id", this.title)
-      divCard.setAttribute("class","movie-card")
+      divCard.setAttribute("class","recipe-card")
       
       var h2 =  document.createElement('h2')
       h2.innerText = this.title
@@ -21,7 +21,7 @@ class Movie{
       let divForImg = document.createElement("div")
       divForImg.setAttribute("class","images")
       let img = document.createElement('img')
-      img.setAttribute("alt", "movie picture")
+      img.setAttribute("alt", "recipe picture")
       if(this.image){
         img.setAttribute("src", this.image)
       }else{
@@ -30,7 +30,7 @@ class Movie{
       divForImg.append(img)
     
       let infoCollect = document.createElement('div')
-      infoCollect.setAttribute("class","movie-info")
+      infoCollect.setAttribute("class","recipe-info")
       this.addInfoCollect(infoCollect)
    
   
@@ -56,16 +56,16 @@ class Movie{
       }
   
      addDeleteButton(infoCollect){
-      let movie = this
+      let recipe = this
       let button = document.createElement("button")
       button.innerText = "Delete this video"
-      button.setAttribute("class", "delete-movie")
-      button.onclick = Movie.deleteMovie.bind(movie)
+      button.setAttribute("class", "delete-recipe")
+      button.onclick = recipe.deleterecipe.bind(recipe)
       infoCollect.append(button)
      }
   
     
-     static createMovie(inputArray,textareas){
+     static createrecipe(inputArray,textareas){
          let characters_attributes = {};
          let inputs = inputArray[0]
          let inputsForNames = inputArray[1]
@@ -107,24 +107,24 @@ class Movie{
           body: JSON.stringify(formData)
         };
   
-        fetch(`${BACKEND_URL}/movies`, configObj)
+        fetch(`${BACKEND_URL}/recipes`, configObj)
         .then(resp=>resp.json())
         .then(json=>{
-          let mObject = new Movie(json);
-          mObject.addMovietoPage();
-          alert("Congrats! Movie created! Scroll down to see your new movie!")
+          let mObject = new recipe(json);
+          mObject.addrecipetoPage();
+          alert("Congrats! recipe created! Scroll down to see your new recipe!")
          }
         )
         .then(()=>clearAllInputs(inputs,textareas))
         .catch(error=>{
-          alert("Error! Can't create a movie...");
+          alert("Error! Can't create a recipe...");
           console.log(error.message);
         }
         )
      }
   
-     static deleteMovie(){
-      let result = confirm("Do you want to delete this movie?")
+     static deleterecipe(){
+      let result = confirm("Do you want to delete this recipe?")
       if (result){
       let configObj = {
         method: "DELETE",
@@ -137,7 +137,7 @@ class Movie{
         })
       };
   
-       fetch(`${BACKEND_URL}/movies/${this.id}`, configObj)
+       fetch(`${BACKEND_URL}/recipes/${this.id}`, configObj)
        .then(resp=>resp.text())
        .then(resp=>alert(resp))
        .then(()=>document.getElementById(this.title).remove())

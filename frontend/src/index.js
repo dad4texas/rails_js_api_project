@@ -4,35 +4,35 @@ const form = document.querySelector("form")
 const select = form.querySelector('select')
 let character_counter = 0
 const directors_names = []
-let addMovie = false
+let addrecipe = false
 
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  fetchMovies()
+  fetchrecipes()
 
 });
 
-  function fetchMovies(){
-    fetch(`${BACKEND_URL}/movies`)
+  function fetchrecipes(){
+    fetch(`${BACKEND_URL}/recipes`)
     .then(response => response.json())
     .then(json => {
-      for (movie of json){
-        let mObject = new Movie(movie);
-        mObject.addMovietoPage()
+      for (recipe of json){
+        let mObject = new recipe(recipe);
+        mObject.addrecipetoPage()
       } 
     }   
       );
   }
 
-let button = document.querySelector("div#create-movie")
+let button = document.querySelector("div#create-recipe")
 button.addEventListener("click",()=>{
-  if(addMovie){
+  if(addrecipe){
     form.style.display = "none"
   }else{
     form.style.display = "block"
   }
-  addMovie = !addMovie
+  addrecipe = !addrecipe
 })
 
 form.addEventListener("submit", (e)=>{
@@ -45,9 +45,9 @@ form.addEventListener("submit", (e)=>{
 
 
   if(!!inputs[0].value){
-    Movie.createMovie(inputArray,textareas)
+    recipe.createrecipe(inputArray,textareas)
   }else{
-    alert("Error...A movie must at least have a name!")
+    alert("Error...A recipe must at least have a name!")
   }
 })
 
@@ -65,14 +65,14 @@ function addMoreCharacter(){
   
   <br>
   <label class="character-name">Character name</label>
-  <input class="character-names" type="text" name="movie[characters_attributes][${character_counter}][name]" id="movie[characters_attributes][${character_counter}][name]" placeholder="A character can't be saved without a name"></br>
+  <input class="character-names" type="text" name="recipe[characters_attributes][${character_counter}][name]" id="recipe[characters_attributes][${character_counter}][name]" placeholder="A character can't be saved without a name"></br>
     
 
   <label>Character image</label>
-  <input class = "character-images" type="text" name="movie[characters_attributes][${character_counter}][image]" id="movie[characters_attributes][${character_counter}][image]" placeholder="Write down the URL"></br>
+  <input class = "character-images" type="text" name="recipe[characters_attributes][${character_counter}][image]" id="recipe[characters_attributes][${character_counter}][image]" placeholder="Write down the URL"></br>
 
   <label>Character introduction</label>
-  <textarea name="movie[characters_attributes][${character_counter}][introduction]" id="movie[characters_attributes][${character_counter}][introduction]"></textarea></br>
+  <textarea name="recipe[characters_attributes][${character_counter}][introduction]" id="recipe[characters_attributes][${character_counter}][introduction]"></textarea></br>
   <br>
   `
   document.getElementsByClassName("submit")[0].remove()
@@ -81,14 +81,14 @@ function addMoreCharacter(){
 
 let buttonForSorting = document.getElementById("sort-button")
 buttonForSorting.addEventListener("click", function(){
-  fetch(`${BACKEND_URL}/movies`)
+  fetch(`${BACKEND_URL}/recipes`)
   .then(resp=>resp.json())
   .then((array)=>{
   array.sort(sorting)
   cardArea.innerHTML=""
-  array.forEach((movie)=>{
-    let mObject = new Movie(movie);
-    mObject.addMovietoPage()
+  array.forEach((recipe)=>{
+    let mObject = new recipe(recipe);
+    mObject.addrecipetoPage()
   })
 })
 })

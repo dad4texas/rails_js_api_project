@@ -32,13 +32,13 @@ h1, #waffle-video {
   }
   
   
-  .movie-info {
+  .recipe-info {
       width: 400px;
       overflow: auto; 
       float: left;   
   }
   
-  .movie-card {
+  .recipe-card {
       display: inline-flex;
       flex-wrap: wrap;
       flex-direction: column;
@@ -93,7 +93,7 @@ h1, #waffle-video {
       overflow: hidden;
   }
   
-  div#create-movie{
+  div#create-recipe{
       position: fixed;
       top: 20%;
       right: 3%;
@@ -103,7 +103,7 @@ h1, #waffle-video {
       font-family: cursive;
   }
   
-  div#create-movie img{
+  div#create-recipe img{
       width: 100px;
       height: auto;
       justify-self: center;
@@ -143,7 +143,7 @@ h1, #waffle-video {
   }
   
   
-  .delete-movie{
+  .delete-recipe{
       background-color:#f44336;
       padding: 2%;
       border: 1px solid black;
@@ -161,13 +161,13 @@ h1, #waffle-video {
   }
   
   @media only screen and (max-width: 1680px) {
-  .movie-card{
+  .recipe-card{
     width: 50%;
   }
     }
   
     @media only screen and (max-width: 1100px){
-      .movie-card{
+      .recipe-card{
         width: 80%;
   
       }
@@ -182,7 +182,7 @@ h1, #waffle-video {
   }
   
   @media only screen and (max-width: 1790px){
-      div#create-movie{
+      div#create-recipe{
           position: absolute;
           top: 20%;
           right: 3%;

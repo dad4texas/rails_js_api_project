@@ -1,9 +1,9 @@
-class CreateMovies < ActiveRecord::Migration[6.0]
+class Createrecipes < ActiveRecord::Migration[6.0]
   def change
-    create_table :movies do |t|
+    create_table :recipes do |t|
       t.string :title
       t.string :description
-      t.datetime :realease_date
+      #t.datetime :release_date
       t.integer :director_id
       t.integer :rt_score
       t.string :image
