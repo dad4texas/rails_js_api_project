@@ -1,13 +1,13 @@
-class recipesController < ApplicationController
+class RecipesController < ApplicationController
     
     def index
-        recipes = recipe.all
+        recipes = Recipe.all
         render json: recipeSerializer.new(recipes).to_serialized_json
     end
 
 
     def create
-        recipe = recipe.create(recipe_params)
+        recipe = Recipe.create(recipe_params)
         if params["characters_attributes"]['0']
           if params["characters_attributes"]['0']["name"] == ""
           Character.last.destroy
