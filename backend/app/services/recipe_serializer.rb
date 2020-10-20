@@ -1,4 +1,4 @@
-class recipeSerializer
+class RecipeSerializer
     def initialize(recipe)
         @recipe_object = recipe
     end

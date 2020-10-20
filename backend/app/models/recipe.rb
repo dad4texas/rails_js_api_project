@@ -1,4 +1,4 @@
-class recipe < ApplicationRecord
+class Recipe < ApplicationRecord
     has_many :characters, dependent: :destroy
     belongs_to :director
     accepts_nested_attributes_for :characters

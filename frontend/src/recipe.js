@@ -1,4 +1,4 @@
-class recipe{
+class Recipe{
     constructor(recipe){
       this.id = recipe.id
       this.title = recipe.title
