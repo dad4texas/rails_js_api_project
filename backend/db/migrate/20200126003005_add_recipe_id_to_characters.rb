@@ -1,4 +1,4 @@
-class AddrecipeIdToCharacters < ActiveRecord::Migration[6.0]
+class AddRecipeIdToCharacters < ActiveRecord::Migration[6.0]
   def change
     add_column :characters,:recipe_id,:integer
   end

@@ -10,7 +10,7 @@ class Recipe{
       this.characters = recipe.characters.map(c=>new Character(c))
     }
   
-     addrecipetoPage(){
+     addRecipetoPage(){
       let divCard = document.createElement('div')
       divCard.setAttribute("id", this.title)
       divCard.setAttribute("class","recipe-card")
@@ -60,12 +60,12 @@ class Recipe{
       let button = document.createElement("button")
       button.innerText = "Delete this video"
       button.setAttribute("class", "delete-recipe")
-      button.onclick = recipe.deleterecipe.bind(recipe)
+      button.onclick = Recipe.deleteRecipe.bind(recipe)
       infoCollect.append(button)
      }
   
     
-     static createrecipe(inputArray,textareas){
+     static createRecipe(inputArray,textareas){
          let characters_attributes = {};
          let inputs = inputArray[0]
          let inputsForNames = inputArray[1]
@@ -110,8 +110,8 @@ class Recipe{
         fetch(`${BACKEND_URL}/recipes`, configObj)
         .then(resp=>resp.json())
         .then(json=>{
-          let mObject = new recipe(json);
-          mObject.addrecipetoPage();
+          let mObject = new Recipe(json);
+          mObject.addRecipetoPage();
           alert("Congrats! recipe created! Scroll down to see your new recipe!")
          }
         )
@@ -123,7 +123,7 @@ class Recipe{
         )
      }
   
-     static deleterecipe(){
+     static deleteRecipe(){
       let result = confirm("Do you want to delete this recipe?")
       if (result){
       let configObj = {

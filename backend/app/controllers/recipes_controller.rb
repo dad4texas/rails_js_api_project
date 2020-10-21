@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
     
     def index
         recipes = Recipe.all
-        render json: recipeSerializer.new(recipes).to_serialized_json
+        render json: RecipeSerializer.new(recipes).to_serialized_json
     end
 
 
@@ -15,11 +15,11 @@ class RecipesController < ApplicationController
           end
         end
         recipe.save
-        render json: recipeSerializer.new(recipe).to_serialized_json
+        render json: RecipeSerializer.new(recipe).to_serialized_json
     end
 
     def destroy
-        recipe = recipe.find_by id: params["id"]
+        recipe = Recipe.find_by id: params["id"]
         if recipe
           recipe.destroy
           render plain:  "Succesfully deleted from database!"

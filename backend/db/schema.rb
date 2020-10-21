@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_02_012434) do
     t.string "introduction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "movie_id"
+    t.integer "recipe_id"
     t.string "image"
   end
 
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_02_02_012434) do
     t.string "image"
   end
 
-  create_table "movies", force: :cascade do |t|
+  create_table "recipes", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.integer "director_id"

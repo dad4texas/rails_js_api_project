@@ -4,22 +4,22 @@ const form = document.querySelector("form")
 const select = form.querySelector('select')
 let character_counter = 0
 const directors_names = []
-let addrecipe = false
+let addRecipe = false
 
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  fetchrecipes()
+  fetchRecipes()
 
 });
 
-  function fetchrecipes(){
+  function fetchRecipes(){
     fetch(`${BACKEND_URL}/recipes`)
     .then(response => response.json())
     .then(json => {
       for (recipe of json){
-        let mObject = new recipe(recipe);
-        mObject.addrecipetoPage()
+        let mObject = new Recipe(recipe);
+        mObject.addRecipetoPage()
       } 
     }   
       );
@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 let button = document.querySelector("div#create-recipe")
 button.addEventListener("click",()=>{
-  if(addrecipe){
+  if(addRecipe){
     form.style.display = "none"
   }else{
     form.style.display = "block"
   }
-  addrecipe = !addrecipe
+  addRecipe = !addRecipe
 })
 
 form.addEventListener("submit", (e)=>{
@@ -45,7 +45,7 @@ form.addEventListener("submit", (e)=>{
 
 
   if(!!inputs[0].value){
-    recipe.createrecipe(inputArray,textareas)
+    Recipe.createRecipe(inputArray,textareas)
   }else{
     alert("Error...A recipe must at least have a name!")
   }
@@ -87,8 +87,8 @@ buttonForSorting.addEventListener("click", function(){
   array.sort(sorting)
   cardArea.innerHTML=""
   array.forEach((recipe)=>{
-    let mObject = new recipe(recipe);
-    mObject.addrecipetoPage()
+    let mObject = new Recipe(recipe);
+    mObject.addRecipetoPage()
   })
 })
 })
